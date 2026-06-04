@@ -12,7 +12,9 @@ content="width=device-width, initial-scale=1.0"
 
 >
 
-  <title>Shalom Baptist Visitor Connect</title>
+  <title>
+    Shalom Baptist Connect
+  </title>
 
   <link
     rel="stylesheet"
@@ -33,19 +35,19 @@ content="width=device-width, initial-scale=1.0"
 <div class="glass-card">
 
   <div class="logo">
-    Shalom Baptist Church
+    SBC
   </div>
 
   <h1>
-    Visitor Connect
+    Shalom Baptist Connect
   </h1>
 
   <h3>
-    Welcome Team Portal
+    Visitor Assimilation Platform
   </h3>
 
   <p class="subtitle">
-    Helping us welcome, connect, and follow up with every guest who visits our church.
+    Manage visitors, follow-ups, prayer requests, and church assimilation activities from one platform.
   </p>
 
   <div class="form-group">
@@ -62,16 +64,12 @@ content="width=device-width, initial-scale=1.0"
     class="main-btn"
     onclick="checkCode()"
   >
-    Continue
+    Access Platform
   </button>
 
   <p
     id="errorMessage"
-    style="
-      margin-top:15px;
-      color:#f87171;
-      display:none;
-    "
+    class="error-message"
   >
     Invalid Access Code
   </p>
@@ -92,10 +90,10 @@ content="width=device-width, initial-scale=1.0"
       const validCode =
         "SBTVISITOR2026";
 
-      if(code === validCode) {
+      if(code === validCode){
 
         window.location.href =
-          "visitor.html";
+          "dashboard.html";
 
       }
 
