@@ -30,85 +30,66 @@ content="width=device-width, initial-scale=1.0"
 
 <body>
 
-  <div class="container">
+  <div class="hero-overlay">
 
-<div class="glass-card">
+  <div class="login-card">
 
-  <div class="logo">
-    SBC
-  </div>
+<div class="church-badge">
+  SBC
+</div>
 
-  <h1>
-    Shalom Baptist Connect
-  </h1>
+<h1>
+  Shalom Baptist Connect
+</h1>
 
-  <h3>
-    Visitor Assimilation Platform
-  </h3>
+<h2>
+  Visitor & Assimilation Platform
+</h2>
 
-  <p class="subtitle">
-    Manage visitors, follow-ups, prayer requests, and church assimilation activities from one platform.
-  </p>
+<p class="hero-text">
 
-  <div class="form-group">
+  Connecting visitors,
+  supporting spiritual growth,
+  and strengthening church engagement.
 
-    <input
-      type="password"
-      id="accessCode"
-      placeholder="Enter Access Code"
-    >
+</p>
 
-  </div>
+<div class="feature-list">
 
-  <button
-    class="main-btn"
-    onclick="checkCode()"
-  >
-    Access Platform
-  </button>
+  <span>✓ Visitor Registration</span>
 
-  <p
-    id="errorMessage"
-    class="error-message"
-  >
-    Invalid Access Code
-  </p>
+  <span>✓ Follow-Up Tracking</span>
+
+  <span>✓ Prayer Care</span>
+
+  <span>✓ Ministry Reports</span>
 
 </div>
 
+<input
+  type="password"
+  id="accessCode"
+  placeholder="Enter Access Code"
+>
+
+<button
+  class="main-btn"
+  onclick="checkCode()"
+>
+  Enter Platform
+</button>
+
+<p
+  id="errorMessage"
+  class="error-message"
+>
+  Invalid Access Code
+</p>
+
   </div>
 
-  <script>
+</div>
 
-    function checkCode() {
-
-      const code =
-        document.getElementById(
-          "accessCode"
-        ).value.trim();
-
-      const validCode =
-        "SBTVISITOR2026";
-
-      if(code === validCode){
-
-        window.location.href =
-          "dashboard.html";
-
-      }
-
-      else {
-
-        document.getElementById(
-          "errorMessage"
-        ).style.display =
-          "block";
-
-      }
-
-    }
-
-  </script>
 
 </body>
 
