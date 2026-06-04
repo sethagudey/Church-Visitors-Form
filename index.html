@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+
+>
+
+  <title>Shalom Baptist Visitor Connect</title>
+
+  <link
+    rel="stylesheet"
+    href="css/style.css"
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+</head>
+
+<body>
+
+  <div class="container">
+
+```
+<div class="glass-card">
+
+  <div class="logo">
+    Shalom Baptist Church
+  </div>
+
+  <h1>
+    Visitor Connect
+  </h1>
+
+  <h3>
+    Welcome Team Portal
+  </h3>
+
+  <p class="subtitle">
+    Helping us welcome, connect, and follow up with every guest who visits our church.
+  </p>
+
+  <div class="form-group">
+
+    <input
+      type="password"
+      id="accessCode"
+      placeholder="Enter Access Code"
+    >
+
+  </div>
+
+  <button
+    class="main-btn"
+    onclick="checkCode()"
+  >
+    Continue
+  </button>
+
+  <p
+    id="errorMessage"
+    style="
+      margin-top:15px;
+      color:#f87171;
+      display:none;
+    "
+  >
+    Invalid Access Code
+  </p>
+
+</div>
+```
+
+  </div>
+
+  <script>
+
+    function checkCode() {
+
+      const code =
+        document.getElementById(
+          "accessCode"
+        ).value.trim();
+
+      const validCode =
+        "SBTVISITOR2026";
+
+      if(code === validCode) {
+
+        window.location.href =
+          "visitor.html";
+
+      }
+
+      else {
+
+        document.getElementById(
+          "errorMessage"
+        ).style.display =
+          "block";
+
+      }
+
+    }
+
+  </script>
+
+</body>
+
+</html>
