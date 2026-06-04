@@ -32,52 +32,118 @@ content="width=device-width, initial-scale=1.0"
 
   <div class="hero-overlay">
 
-  <div class="login-card">
+<div class="login-card">
 
-<div class="church-badge">
-  SBC
-</div>
+  <div class="church-badge">
+    SBC
+  </div>
 
-<h1>
-  Shalom Baptist Connect
-</h1>
+  <h1>
+    Shalom Baptist Connect
+  </h1>
 
-<h2>
-  Visitor & Assimilation Platform
-</h2>
+  <h2>
+    Visitor & Assimilation Platform
+  </h2>
 
-<p class="hero-text">
+  <p class="hero-text">
 
-  Connecting visitors,
-  supporting spiritual growth,
-  and strengthening church engagement.
+    Welcome to the ministry platform for
+    visitor care, follow-up, prayer support,
+    and church assimilation.
 
-</p>
+  </p>
 
-<input
-  type="password"
-  id="accessCode"
-  placeholder="Enter Access Code"
->
+  <div class="form-group">
 
-<button
-  class="main-btn"
-  onclick="checkCode()"
->
-  Enter Platform
-</button>
-
-<p
-  id="errorMessage"
-  class="error-message"
->
-  Invalid Access Code
-</p>
+    <input
+      type="password"
+      id="accessCode"
+      placeholder="Enter Access Code"
+      autocomplete="off"
+    >
 
   </div>
 
+  <button
+    type="button"
+    class="main-btn"
+    onclick="checkCode()"
+  >
+    Enter Platform
+  </button>
+
+  <p
+    id="errorMessage"
+    class="error-message"
+  >
+    Invalid Access Code
+  </p>
+
 </div>
 
+  </div>
+
+  <script>
+
+    const ACCESS_CODE =
+      "SBTVISITOR2026";
+
+    function checkCode() {
+
+      const code =
+        document
+          .getElementById(
+            "accessCode"
+          )
+          .value
+          .trim();
+
+      const error =
+        document
+          .getElementById(
+            "errorMessage"
+          );
+
+      if (
+        code === ACCESS_CODE
+      ) {
+
+        window.location.href =
+          "dashboard.html";
+
+      }
+
+      else {
+
+        error.style.display =
+          "block";
+
+      }
+
+    }
+
+    document
+      .getElementById(
+        "accessCode"
+      )
+      .addEventListener(
+        "keydown",
+        function(event) {
+
+          if (
+            event.key ===
+            "Enter"
+          ) {
+
+            checkCode();
+
+          }
+
+        }
+      );
+
+  </script>
 
 </body>
 
