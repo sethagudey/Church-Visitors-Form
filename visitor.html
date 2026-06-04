@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+
+>
+
+  <title>Register Visitor</title>
+
+  <link
+    rel="stylesheet"
+    href="css/style.css"
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+</head>
+
+<body>
+
+  <div class="container">
+
+```
+<a
+  href="index.html"
+  class="back-btn"
+>
+  ← Visitor Home
+</a>
+
+<div class="glass-card form-card">
+
+  <h1>
+    First-Time Visitor Registration
+  </h1>
+
+  <p class="subtitle">
+    Help us welcome and connect with every guest.
+  </p>
+
+  <form id="visitorForm">
+
+    <div class="form-group">
+      <input
+        type="text"
+        name="fullName"
+        placeholder="Full Name"
+        required
+      >
+    </div>
+
+    <div class="form-group">
+      <input
+        type="text"
+        name="phone"
+        placeholder="Phone Number"
+        required
+      >
+    </div>
+
+    <div class="form-group">
+      <select
+        name="gender"
+        required
+      >
+        <option value="">
+          Gender
+        </option>
+
+        <option>
+          Male
+        </option>
+
+        <option>
+          Female
+        </option>
+
+      </select>
+    </div>
+
+    <div class="form-group">
+      <select
+        name="ageRange"
+        required
+      >
+        <option value="">
+          Age Range
+        </option>
+
+        <option>
+          Under 18
+        </option>
+
+        <option>
+          18 - 25
+        </option>
+
+        <option>
+          26 - 35
+        </option>
+
+        <option>
+          36 - 50
+        </option>
+
+        <option>
+          51+
+        </option>
+
+      </select>
+    </div>
+
+    <div class="form-group">
+      <input
+        type="text"
+        name="area"
+        placeholder="Residential Area"
+      >
+    </div>
+
+    <div class="form-group">
+      <input
+        type="text"
+        name="occupation"
+        placeholder="Occupation"
+      >
+    </div>
+
+    <div class="form-group">
+      <select
+        name="maritalStatus"
+      >
+        <option value="">
+          Marital Status
+        </option>
+
+        <option>
+          Single
+        </option>
+
+        <option>
+          Married
+        </option>
+
+        <option>
+          Divorced
+        </option>
+
+        <option>
+          Widowed
+        </option>
+
+      </select>
+    </div>
+
+    <div class="form-group">
+      <input
+        type="text"
+        name="invitedBy"
+        placeholder="Invited By"
+      >
+    </div>
+
+    <div class="form-group">
+      <select
+        name="firstTime"
+      >
+        <option value="">
+          First Time At Shalom?
+        </option>
+
+        <option>
+          Yes
+        </option>
+
+        <option>
+          No
+        </option>
+
+      </select>
+    </div>
+
+    <div class="form-group">
+      <select
+        name="heardAboutUs"
+      >
+        <option value="">
+          How Did You Hear About Us?
+        </option>
+
+        <option>
+          Friend
+        </option>
+
+        <option>
+          Family Member
+        </option>
+
+        <option>
+          Church Member
+        </option>
+
+        <option>
+          Social Media
+        </option>
+
+        <option>
+          Community Outreach
+        </option>
+
+        <option>
+          Online Search
+        </option>
+
+        <option>
+          Other
+        </option>
+
+      </select>
+    </div>
+
+    <div class="form-group">
+      <select
+        name="joiningInterest"
+      >
+        <option value="">
+          Interested In Joining?
+        </option>
+
+        <option>
+          Yes
+        </option>
+
+        <option>
+          No
+        </option>
+
+        <option>
+          Maybe
+        </option>
+
+      </select>
+    </div>
+
+    <div class="form-group">
+      <select
+        name="homeVisit"
+      >
+        <option value="">
+          Would Like A Home Visit?
+        </option>
+
+        <option>
+          Yes
+        </option>
+
+        <option>
+          No
+        </option>
+
+      </select>
+    </div>
+
+    <div class="form-group">
+      <textarea
+        name="prayerRequest"
+        placeholder="Prayer Request"
+      ></textarea>
+    </div>
+
+    <button
+      type="submit"
+      class="submit-btn"
+    >
+      Save Visitor
+    </button>
+
+  </form>
+
+</div>
+```
+
+  </div>
+
+  <script>
+
+    const scriptURL =
+      "PASTE_YOUR_VISITOR_API_URL_HERE";
+
+    const form =
+      document.getElementById(
+        "visitorForm"
+      );
+
+    form.addEventListener(
+      "submit",
+      async function(e){
+
+        e.preventDefault();
+
+        const button =
+          document.querySelector(
+            ".submit-btn"
+          );
+
+        button.innerText =
+          "Saving Visitor...";
+
+        button.disabled = true;
+
+        const formData =
+          new FormData(form);
+
+        const data =
+          Object.fromEntries(
+            formData.entries()
+          );
+
+        try {
+
+          const response =
+            await fetch(
+              scriptURL,
+              {
+                method: "POST",
+                body:
+                  JSON.stringify(data)
+              }
+            );
+
+          const result =
+            await response.json();
+
+          if(result.success){
+
+            window.location.href =
+              "success.html";
+
+          }
+
+          else {
+
+            alert(
+              "Failed to save visitor."
+            );
+
+          }
+
+        }
+
+        catch(error){
+
+          console.error(error);
+
+          alert(
+            "Failed to save visitor."
+          );
+
+        }
+
+        button.innerText =
+          "Save Visitor";
+
+        button.disabled = false;
+
+      }
+    );
+
+  </script>
+
+</body>
+
+</html>
