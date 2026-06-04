@@ -344,3 +344,30 @@ font-size: 24px;
 }
 
 }
+.souls-btn {
+
+  width: 100%;
+
+  padding: 18px;
+
+  border-radius: 16px;
+
+  background: #16a34a;
+
+  color: white;
+
+  text-decoration: none;
+
+  text-align: center;
+
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.souls-btn:hover {
+
+  background: #15803d;
+
+  transform: translateY(-2px);
+}
