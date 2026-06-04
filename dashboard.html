@@ -3,123 +3,178 @@
 <html lang="en">
 
 <head>
-
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta
-name="viewport"
-content="width=device-width, initial-scale=1.0"
+  <title>Shalom Baptist Connect Dashboard</title>
 
->
-
-  <title>Dashboard | Shalom Baptist Connect</title>
-
-  <link
-    rel="stylesheet"
-    href="css/style.css"
-  >
+  <link rel="stylesheet" href="css/style.css">
 
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet"
-  >
-
+    rel="stylesheet">
 </head>
 
 <body>
 
   <div class="container">
 
-<div class="glass-card">
+<div class="dashboard-card">
 
-  <div class="logo">
-    SBC
-  </div>
+  <div class="dashboard-header">
 
-  <h1>
-    Visitor Connect Dashboard
-  </h1>
-
-  <p class="subtitle">
-    Welcome to the Shalom Baptist Church Visitor Assimilation Platform.
-  </p>
-
-  <div class="stats-grid">
-
-    <div class="stat-card">
-      <h2>247</h2>
-      <p>Total Visitors</p>
+    <div class="logo">
+      SBC
     </div>
 
-    <div class="stat-card">
-      <h2>18</h2>
-      <p>This Month</p>
-    </div>
+    <h1>Shalom Baptist Connect</h1>
 
-    <div class="stat-card">
-      <h2>12</h2>
-      <p>Pending Follow-Ups</p>
-    </div>
-    <div class="stat-card">
-      <h2>14</h2>
-      <p>Prayer Requests</p>
-    </div>
-
-    <div class="stat-card">
-      <h2>5</h2>
-      <p>New Members</p>
-    </div>
+    <p>
+      Visitor Assimilation & Ministry Management Platform
+    </p>
 
   </div>
 
- <div class="button-group">
+  <!-- EVANGELISM -->
 
-  <a
-    href="visitor.html"
-    class="main-btn"
-  >
-    Register Visitor
-  </a>
+  <section class="dashboard-section">
 
-  <a
-    href="followup.html"
-    class="secondary-btn"
-  >
-    Follow-Up Tracker
-  </a>
+    <h2>Evangelism Statistics</h2>
 
-  <a
-    href="prayers.html"
-    class="secondary-btn"
-  >
-    Prayer Requests
-  </a>
+    <div class="stats-grid">
 
-  <a
-    href="reports.html"
-    class="secondary-btn"
-  >
-    Reports & Statistics
-  </a>
+      <div class="stat-card">
+        <h3>156</h3>
+        <p>Souls Won</p>
+      </div>
 
-  <a
-    href="https://souls.sbcebmg.org"
-    class="souls-btn"
-    target="_blank"
-  >
-    Souls Won Platform
-  </a>
+      <div class="stat-card">
+        <h3>42</h3>
+        <p>This Month</p>
+      </div>
 
-</div>
+      <div class="stat-card">
+        <h3>18</h3>
+        <p>This Week</p>
+      </div>
 
-  <br>
+      <div class="stat-card">
+        <h3>8</h3>
+        <p>Pending Follow-Up</p>
+      </div>
 
-  <a
-    href="index.html"
-    class="back-btn"
-  >
-    Logout
-  </a>
+    </div>
+
+  </section>
+
+  <!-- VISITORS -->
+
+  <section class="dashboard-section">
+
+    <h2>Visitor Statistics</h2>
+
+    <div class="stats-grid">
+
+      <div class="stat-card">
+        <h3>247</h3>
+        <p>Total Visitors</p>
+      </div>
+
+      <div class="stat-card">
+        <h3>18</h3>
+        <p>This Month</p>
+      </div>
+
+      <div class="stat-card">
+        <h3>12</h3>
+        <p>Interested In Joining</p>
+      </div>
+
+      <div class="stat-card">
+        <h3>7</h3>
+        <p>Home Visits</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ASSIMILATION -->
+
+  <section class="dashboard-section">
+
+    <h2>Assimilation Statistics</h2>
+
+    <div class="stats-grid">
+
+      <div class="stat-card">
+        <h3>14</h3>
+        <p>Prayer Requests</p>
+      </div>
+
+      <div class="stat-card">
+        <h3>9</h3>
+        <p>Returned Visitors</p>
+      </div>
+
+      <div class="stat-card">
+        <h3>5</h3>
+        <p>New Members</p>
+      </div>
+
+      <div class="stat-card">
+        <h3>4</h3>
+        <p>Membership Class</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- TOOLS -->
+
+  <section class="dashboard-section">
+
+    <h2>Ministry Tools</h2>
+
+    <div class="tools-grid">
+
+      <a href="visitor.html" class="tool-btn primary">
+        Register Visitor
+      </a>
+
+      <a href="followup.html" class="tool-btn">
+        Follow-Up Tracker
+      </a>
+
+      <a href="prayers.html" class="tool-btn">
+        Prayer Requests
+      </a>
+
+      <a href="reports.html" class="tool-btn">
+        Reports & Statistics
+      </a>
+
+      <a
+        href="https://souls.sbcebmg.org"
+        target="_blank"
+        class="tool-btn souls-btn">
+        Souls Won Platform
+      </a>
+
+    </div>
+
+  </section>
+
+  <div class="logout-area">
+
+    <a
+      href="index.html"
+      class="logout-btn">
+      Logout
+    </a>
+
+  </div>
 
 </div>
 
