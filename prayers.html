@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+
+>
+
+  <title>Prayer Requests</title>
+
+  <link
+    rel="stylesheet"
+    href="css/style.css"
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+</head>
+
+<body>
+
+  <div class="container">
+
+<a
+  href="dashboard.html"
+  class="back-btn"
+>
+  ← Dashboard
+</a>
+
+<div class="glass-card form-card">
+
+  <h1>
+    Prayer Requests
+  </h1>
+
+  <p class="subtitle">
+    Record and manage visitor prayer needs.
+  </p>
+
+  <form id="prayerForm">
+
+    <div class="form-group">
+      <input
+        type="text"
+        name="visitorName"
+        placeholder="Visitor Name"
+        required
+      >
+    </div>
+
+    <div class="form-group">
+      <input
+        type="text"
+        name="phone"
+        placeholder="Phone Number"
+      >
+    </div>
+
+    <div class="form-group">
+      <textarea
+        name="prayerRequest"
+        placeholder="Prayer Request"
+        required
+      ></textarea>
+    </div>
+
+    <div class="form-group">
+
+      <select
+        name="priority"
+      >
+
+        <option value="">
+          Priority
+        </option>
+
+        <option>
+          Low
+        </option>
+
+        <option>
+          Medium
+        </option>
+
+        <option>
+          High
+        </option>
+
+        <option>
+          Urgent
+        </option>
+
+      </select>
+
+    </div>
+
+    <div class="form-group">
+
+      <select
+        name="status"
+      >
+
+        <option value="">
+          Status
+        </option>
+
+        <option>
+          Pending
+        </option>
+
+        <option>
+          Assigned
+        </option>
+
+        <option>
+          Prayed For
+        </option>
+
+        <option>
+          Follow-Up Needed
+        </option>
+
+        <option>
+          Completed
+        </option>
+
+      </select>
+
+    </div>
+
+    <div class="form-group">
+
+      <input
+        type="text"
+        name="assignedTo"
+        placeholder="Assigned To"
+      >
+
+    </div>
+
+    <div class="form-group">
+
+      <textarea
+        name="notes"
+        placeholder="Additional Notes"
+      ></textarea>
+
+    </div>
+
+    <button
+      type="submit"
+      class="submit-btn"
+    >
+      Save Prayer Request
+    </button>
+
+  </form>
+
+</div>
+
+  </div>
+
+  <script>
+
+    const scriptURL =
+      "PASTE_PRAYER_API_URL_HERE";
+
+    const form =
+      document.getElementById(
+        "prayerForm"
+      );
+
+    form.addEventListener(
+      "submit",
+      async function(e){
+
+        e.preventDefault();
+
+        const button =
+          document.querySelector(
+            ".submit-btn"
+          );
+
+        button.innerText =
+          "Saving...";
+
+        button.disabled = true;
+
+        const formData =
+          new FormData(form);
+
+        const data =
+          Object.fromEntries(
+            formData.entries()
+          );
+
+        try {
+
+          const response =
+            await fetch(
+              scriptURL,
+              {
+                method: "POST",
+                body:
+                  JSON.stringify(data)
+              }
+            );
+
+          const result =
+            await response.json();
+
+          if(result.success){
+
+            alert(
+              "Prayer Request Saved"
+            );
+
+            form.reset();
+
+          }
+
+          else {
+
+            alert(
+              "Submission Failed"
+            );
+
+          }
+
+        }
+
+        catch(error){
+
+          console.error(error);
+
+          alert(
+            "Submission Failed"
+          );
+
+        }
+
+        button.innerText =
+          "Save Prayer Request";
+
+        button.disabled = false;
+
+      }
+    );
+
+  </script>
+
+</body>
+
+</html>
