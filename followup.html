@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+
+>
+
+  <title>Visitor Follow-Up Tracker</title>
+
+  <link
+    rel="stylesheet"
+    href="css/style.css"
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+</head>
+
+<body>
+
+  <div class="container">
+
+```
+<a
+  href="index.html"
+  class="back-btn"
+>
+  ← Visitor Home
+</a>
+
+<div class="glass-card form-card">
+
+  <h1>
+    Visitor Follow-Up Tracker
+  </h1>
+
+  <p class="subtitle">
+    Record follow-up activities for guests.
+  </p>
+
+  <form id="followupForm">
+
+    <div class="form-group">
+      <input
+        type="text"
+        name="visitorName"
+        placeholder="Visitor Name"
+        required
+      >
+    </div>
+
+    <div class="form-group">
+      <input
+        type="text"
+        name="phone"
+        placeholder="Phone Number"
+      >
+    </div>
+
+    <div class="form-group">
+      <select
+        name="status"
+        required
+      >
+        <option value="">
+          Follow-Up Status
+        </option>
+
+        <option>
+          Called
+        </option>
+
+        <option>
+          WhatsApp Sent
+        </option>
+
+        <option>
+          Home Visit Done
+        </option>
+
+        <option>
+          Returned To Church
+        </option>
+
+        <option>
+          Joined Membership Class
+        </option>
+
+        <option>
+          Became Member
+        </option>
+
+      </select>
+    </div>
+
+    <div class="form-group">
+      <input
+        type="text"
+        name="assignedTo"
+        placeholder="Assigned To"
+      >
+    </div>
+
+    <div class="form-group">
+      <input
+        type="date"
+        name="nextActionDate"
+      >
+    </div>
+
+    <div class="form-group">
+      <textarea
+        name="notes"
+        placeholder="Follow-Up Notes"
+      ></textarea>
+    </div>
+
+    <button
+      type="submit"
+      class="submit-btn"
+    >
+      Save Follow-Up
+    </button>
+
+  </form>
+
+</div>
+```
+
+  </div>
+
+</body>
+
+</html>
